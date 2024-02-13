@@ -1,0 +1,25 @@
+
+<!-- Add other content of products/index page below -->
+<p style="color: green"><%= notice %></p>
+
+<div class="container">
+  <!-- Your content goes here -->
+
+  <div class="text-end mt-3">
+    <%= button_to 'Sign out', logout_path, method: :delete, class: "btn btn-danger" %>
+  </div>
+</div>
+<h1>Products</h1>
+
+<div id="products">
+  <% @products.each do |product| %>
+    <%= render product %>
+    <%= button_to "Buy-Now", checkouts_path(id: product.id), data: { turbo: false } %>
+
+    <p>
+      <%= link_to "Show this product", product %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New product", new_product_path %>

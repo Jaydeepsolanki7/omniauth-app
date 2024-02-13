@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @product %>
+
+<%= image_tag @product.image, width: 200, height: 250 if @product.image.attached? %>
+
+
+<div>
+  <%= link_to "Edit this product", edit_product_path(@product) %> |
+  <%= link_to "Back to products", products_path %>
+
+
+  <%= button_to "Destroy this product", @product, method: :delete %>
+</div>

@@ -1,0 +1,9 @@
+
+<% if @image.present? %>
+<%debugger%>
+  <%= image_tag(@image, alt: 'User Avatar') %>
+<% end %>
+
+<% if session[:client_id].present? %>
+  <p>Welcome, <%= current_user %>!</p>
+<% end %>
